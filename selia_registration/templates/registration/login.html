@@ -16,10 +16,14 @@
           <div class="card-body">
             {# Display a form #}
             <form method="post" novalidate>
+              {% csrf_token %}
               <button type="submit" class="btn btn-selia btn-block">SELIA</button>
               <br />
-                {% csrf_token %}
-                {{ form | selia_form }}
+              <div class="container-fluid w-100">
+                {% bootstrap_form form.username %}
+
+                {% bootstrap_form form.password %}
+              </div>
               <br />
               <button type="submit" class="btn btn-selia btn-block">{% trans 'Enter' %}</button>
             </form>
