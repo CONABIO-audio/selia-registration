@@ -1,0 +1,112 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-01-21 20:22-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: templates/registration/login.html:28
+msgid "Enter"
+msgstr "Ingresar"
+
+#: templates/registration/login.html:34
+#: templates/selia_registration/password_reset_form.html:28
+msgid "Forgot your password?"
+msgstr "¿Olvidaste tu contraseña?"
+
+#: templates/selia_registration/password_reset_complete.html:20
+msgid "Your password has been changed"
+msgstr "Tu contraseña ha sido actualizada"
+
+#: templates/selia_registration/password_reset_complete.html:20
+msgid "You can now enter"
+msgstr "Ya puedes ingresar"
+
+#: templates/selia_registration/password_reset_complete.html:26
+msgid "back"
+msgstr "atrás"
+
+#: templates/selia_registration/password_reset_confirm.html:21
+msgid "Change your password"
+msgstr "Cambia tu contraseña"
+
+#: templates/selia_registration/password_reset_confirm.html:26
+msgid "Change password"
+msgstr "Cambia tu contraseña"
+
+#: templates/selia_registration/password_reset_confirm.html:31
+msgid ""
+"\n"
+"                This link is invalid. Please restart the password recovery "
+"process.\n"
+"                "
+msgstr ""
+"\n"
+"                Esta liga es inválida. Por favor reinicia el proceso de recuperación "
+"de contraseña.\n"
+"                "
+
+#: templates/selia_registration/password_reset_confirm.html:40
+#: templates/selia_registration/password_reset_done.html:33
+#: templates/selia_registration/password_reset_form.html:41
+msgid "Back"
+msgstr "Atrás"
+
+#: templates/selia_registration/password_reset_done.html:20
+msgid ""
+"\n"
+"            We have sent the instructions to reset your password by email.\n"
+"            "
+msgstr ""
+"\n"
+"            Te hemos enviado las instrucciones para actualizar tu constraseña por correo electrónico.\n"
+"            "
+
+#: templates/selia_registration/password_reset_done.html:25
+msgid ""
+"\n"
+"            It should arrive shortly. If not, please make sure that you have "
+"input the correct address or check your spam directory.\n"
+"            "
+msgstr ""
+"\n"
+"            Debe de llegarte pronto. En caso de que no lo recibas, por favor asegurate de que "
+"hayas ingresado el correo adecuadamente o revisa tu carpeta de correo no deseado.\n"
+"            "
+
+#: templates/selia_registration/password_reset_email.html:2
+msgid "Dear"
+msgstr "Estimado"
+
+#: templates/selia_registration/password_reset_email.html:4
+msgid "To reset your password please enter the following link"
+msgstr "Para actualizar tu contraseña favor de ingresar en la siguiente liga"
+
+#: templates/selia_registration/password_reset_email.html:7
+msgid "Recover your password"
+msgstr "Recupera tu contraseña"
+
+#: templates/selia_registration/password_reset_email.html:10
+msgid "Kindly"
+msgstr "Atentamente"
+
+#: templates/selia_registration/password_reset_form.html:30
+msgid "You can recover it here"
+msgstr "Puedes recuperarla aquí"
+
+#: templates/selia_registration/password_reset_form.html:35
+msgid "Recover you password"
+msgstr "Recupera tu contraseña"
