@@ -1,5 +1,5 @@
 attrs==19.3.0
-Django==2.2.7
+Django==2.2.10
 django-autocomplete-light==3.4.1
 django-crispy-forms==1.8.1
 django-widget-tweaks==1.4.5
