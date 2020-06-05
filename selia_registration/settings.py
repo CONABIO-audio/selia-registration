@@ -2,7 +2,7 @@ SELIA_REGISTRATION_APPS = [
     'selia_registration',
 ]
 
-LOGIN_URL = '/registration/accounts/login/'
+LOGIN_URL = '/registration/login/'
 
 # Email settings
 EMAIL_HOST = 'smtp.gmail.com'
