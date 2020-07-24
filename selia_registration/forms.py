@@ -1,5 +1,25 @@
 from django import forms
+from django.contrib.auth import get_user_model
+from django.utils.translation import gettext as _
+
 
 class InviteUserForm(forms.Form):
-    username = forms.EmailField(label='Correo electrónico', max_length=100)
-    message = forms.CharField(label='Escribe tu mensaje', max_length=500, widget=forms.Textarea)
+    email = forms.EmailField(
+        label=_('Email'),
+        max_length=124)
+    message = forms.CharField(
+        label=_('Write a message'),
+        max_length=500,
+        widget=forms.Textarea,
+        required=False)
+
+    def clean(self):
+        cleaned_data = super().clean()
+        email = cleaned_data.get('email')
+
+        User = get_user_model()
+        if User.objects.filter(email=email).exists():
+            message = _(
+                'A user with this email is already registered in Selia.'
+            )
+            self.add_error('email', message)

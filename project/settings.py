@@ -1,6 +1,7 @@
 import os
 
 from irekua_dev_settings.settings import *
+from irekua_database.settings import *
 from selia_templates.settings import *
 from selia_registration.settings import *
 
@@ -13,5 +14,6 @@ LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale'), ]
 INSTALLED_APPS = (
     SELIA_REGISTRATION_APPS +
     SELIA_TEMPLATES_APPS +
+    IREKUA_DATABASE_APPS +
     IREKUA_BASE_APPS
 )

@@ -14,15 +14,17 @@
   {% endblocktrans %}
 </p>
 <form method="post">
+<div class="col">
   {% csrf_token %}
-  <div class="container-fluid">
-    <div class="row">
-      {% bootstrap_form form.username %}
-    </div>
-    <div class="row">
-      {% bootstrap_form form.message %}
-    </div>
+  <div class="row">
+      {% bootstrap_form form.email %}
   </div>
-  <button type="submit" class="btn btn-text card-link">{% trans 'Invite' %}</button>
+  <div class="row">
+      {% bootstrap_form form.message %}
+  </div>
+  <button type="submit" class="btn btn-text text-primary card-link">
+    {% trans 'Invite' %}
+  </button>
+</div>
 </form>
 {% endblock %}
