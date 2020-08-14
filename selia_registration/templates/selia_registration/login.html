@@ -5,11 +5,12 @@
 {% block title %}SELIA - Login{% endblock %}
 
 {% block content %}
-<form method="post" novalidate>
+<h5 class="card-title text-center">{% trans 'Login' %}</h5>
+
+<form method="post">
   {% csrf_token %}
-  <button type="submit" class="btn btn-text btn-block">SELIA</button>
-  <br />
-  <div class="container-fluid w-100">
+
+  <div class="container-fluid">
     {% bootstrap_form form.username %}
     {% bootstrap_form form.password %}
   </div>

@@ -30,7 +30,7 @@ def send_invitation_email(email, sender, password, message=''):
     success_code = send_mail(
         _('Invitation to join selia'),
         None,
-        'Selia <selia@conabio.gob.com>',
+        'Selia <selia@conabio.gob.mx>',
         [email],
         fail_silently=False,
         html_message=email_body
@@ -43,3 +43,17 @@ def invite_user(email, sender, message=''):
     new_user, password = create_user_random_password(email)
     send_invitation_email(email, sender, password, message=message)
     return new_user
+
+
+def email_users(subject, message, sender, userset):
+    template = get_template('selia_registration/user_email.html')
+    email_body = template.render({'message': message, 'sender': sender})
+    recipient_list = [user.email for user in userset]
+
+    return send_mail(
+        subject,
+        message,
+        f'{sender.username} <{sender.email}>',
+        recipient_list,
+        html_message=email_body
+    )

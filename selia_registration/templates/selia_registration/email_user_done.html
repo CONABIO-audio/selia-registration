@@ -1,7 +1,7 @@
 {% extends 'selia_registration/base.html' %}
 {% load i18n %}
 
-{% block title %}SELIA - {% trans 'User invited' %}{% endblock %}
+{% block title %}SELIA - {% trans 'Email sent' %}{% endblock %}
 
 {% block content %}
 <div class="text-center p-2">
@@ -9,11 +9,11 @@
 </div>
 <p>
   {% blocktrans %}
-    The invitation was succesfully sent!
+    The email was succesfully sent!
   {% endblocktrans %}
 </p>
 {% if request.GET.next %}
-<a href="{{ request.GET.next }}&user={{ request.GET.user }}" class="btn btn-link text-primary btn-block">
+<a href="{{ request.GET.next }}" class="btn btn-link text-primary btn-block">
   {% trans 'Done' %}
 </a>
 {% else %}

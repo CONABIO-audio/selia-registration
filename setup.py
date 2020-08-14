@@ -15,6 +15,7 @@ setup(
     license='BSD License',
     description='Registration app for Selia',
     long_description=README,
+    install_requires=['django-filter'],
     url='https://github.com/CONABIO-audio/selia-registration',
     author='CONABIO, Gustavo Everardo Robredo Esquivelzeta, Santiago Martínez Balvanera',
     author_email='erobredo@conabio.gob.mx, smartinez@conabio.gob.mx',

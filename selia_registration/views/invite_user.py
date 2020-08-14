@@ -1,13 +1,13 @@
 from django.views.generic.edit import FormView
 from django.views.generic.base import TemplateView
-from django.contrib.auth import views
 from django.urls import reverse
+from django.contrib.auth.mixins import LoginRequiredMixin
 
-from .forms import InviteUserForm
-from .utils import invite_user
+from selia_registration.forms import InviteUserForm
+from selia_registration.utils import invite_user
 
 
-class InviteUserView(FormView):
+class InviteUserView(LoginRequiredMixin,FormView):
     template_name = 'selia_registration/invite_user.html'
     form_class = InviteUserForm
     success_url = 'invite_user_done'
@@ -29,15 +29,5 @@ class InviteUserView(FormView):
         return f'{baseurl}?{querystr}'
 
 
-class InviteUserDoneView(TemplateView):
+class InviteUserDoneView(LoginRequiredMixin, TemplateView):
     template_name = 'selia_registration/invite_user_done.html'
-
-
-class PasswordChangeView(views.PasswordChangeView):
-    template_name = 'selia_registration/password_change_form.html'
-    success_url = 'done'
-
-    def get_success_url(self):
-        url = super().get_success_url()
-        query = self.request.GET.urlencode(safe='/')
-        return f'{url}?{query}'

@@ -1,9 +1,8 @@
 from django.urls import path
 from django.urls import re_path
 from django.contrib.auth import views as auth_views
-from .views import InviteUserView
-from .views import InviteUserDoneView
-from .views import PasswordChangeView
+
+from selia_registration import views
 
 
 urlpatterns = [
@@ -32,21 +31,21 @@ urlpatterns = [
             template_name='selia_registration/password_reset_done.html'),
         name='password_reset_done'
     ),
-    re_path(
-        r'reset/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/',
+    path(
+        r'password_reset/confirm/<uidb64>/<token>/',
         auth_views.PasswordResetConfirmView.as_view(
             template_name='selia_registration/password_reset_confirm.html'),
         name='password_reset_confirm'
     ),
     path(
-        'reset/done/',
+        'password_reset/complete/',
         auth_views.PasswordResetCompleteView.as_view(
             template_name='selia_registration/password_reset_complete.html'),
         name='password_reset_complete'
     ),
     path(
         'password_change/',
-        PasswordChangeView.as_view(),
+        views.PasswordChangeView.as_view(),
         name='password_change'
     ),
     path(
@@ -58,10 +57,18 @@ urlpatterns = [
     ),
     path(
         'invite/',
-        InviteUserView.as_view(),
+        views.InviteUserView.as_view(),
         name='invite'),
     path(
         'invite/done/',
-        InviteUserDoneView.as_view(),
+        views.InviteUserDoneView.as_view(),
         name='invite_user_done'),
+    path(
+        'email/',
+        views.EmailUserView.as_view(),
+        name='email_user'),
+    path(
+        'email/done/',
+        views.EmailUserDoneView.as_view(),
+        name='email_user_done'),
 ]

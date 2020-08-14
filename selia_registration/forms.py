@@ -23,3 +23,15 @@ class InviteUserForm(forms.Form):
                 'A user with this email is already registered in Selia.'
             )
             self.add_error('email', message)
+
+
+class EmailUserForm(forms.Form):
+    subject = forms.CharField(
+        label=_('Email subject'),
+        max_length=64,
+        required=True)
+    message = forms.CharField(
+        label=_('Write a message'),
+        max_length=2048,
+        widget=forms.Textarea,
+        required=True)
